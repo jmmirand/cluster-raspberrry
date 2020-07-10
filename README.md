@@ -69,7 +69,15 @@ ubuntu@master:~$ sudo reboot
 
 ```
 
- 
+### Configurar claves SSH
+
+Necsitamos tener una pareja de clave publica/privada
+
+En la máquina añadimos dicha clave en el fichero **${HOME}.ssh/authorized_keys**
+
+
+
+  
 
 
 
