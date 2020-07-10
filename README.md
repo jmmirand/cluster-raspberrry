@@ -14,7 +14,9 @@ En los servidores instalaremos un cluster kubernetes con 1 master y 3 workers.
 
 
 
-## Configuración de IP fija y asignar nombre a las máquinas.
+## Prepareación previa de las servidores.
+
+###  Asignar IP Fija
 
 Para facilitar la insalación hay que asignar IPs fijas a las máquinas y poner nombre a las máquinas.
 
@@ -49,6 +51,30 @@ network:
     version: 2
 
 ```
+
+
+### Asignación nombre de máquinas
+
+
+Para la asignación de nombres de máquinas modificamos 
+
+/etc/hostanme 
+
+donde viene **ubuntu** por el nuevo nombre , en nuestro caso una con  **master** y las otras tres como **worker01**,**workder02**, etc..
+
+reiniciamo el servidor 
+
+```
+ubuntu@master:~$ sudo reboot 
+
+```
+
+ 
+
+
+
+
+
 
 Ref : [Raspberry Pi static IP & DHCP Server Ubuntu 18.04](https://askubuntu.com/questions/1218755/raspberry-pi-static-ip-dhcp-server-ubuntu-18-04)
 
