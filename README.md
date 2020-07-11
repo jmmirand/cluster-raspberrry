@@ -1,34 +1,28 @@
 # cluster-raspberrry
 
 
-# Objetivo
+Queremos montar un cluster kubernetes con varias Raspberry Pi 4 Modelo B.
 
-Documenter todos los pasos realizados para montar un cluster con 4 raspberry Pi.
+Además aprovecharemos para automatizarlo con Ansible lo más posible para poder recrear el cluster tantas veces que sea necesario.
 
-Una vez montado el hardware instalaremos ubuntu server 64bit.
+Nuestro cluster kubernetes estará compuestos por 4 Raspberry PI.
+ * 1 master
+ * 3 workers
+Usaremos para hacerlo el sistema operativo Ubuntu Server de 64 bits.
 
-En los servidores instalaremos un cluster kubernetes con 1 master y 3 workers.
+## Instalación y preparación del Sistema Operativo
 
+Para el laborario usamos [ubuntu-20.04-preinstalled-server-arm64+raspi.img.xz](https://ubuntu.com/download/raspberry-pi/thank-you?version=20.04&architecture=arm64+raspi) como S.O.
 
-# Instalación y preparación del Sistema Operativo
+Para la instalación del S.O.:
 
-Descargamos la imagen del Sistema Operativo. En este laborario usamos Ubuntu Server 64bits
+* Descargamos e instalamos **raspberry Pi Imager**.
+* Isertamos SDCard , eligimos la imagen y escribimos.
+* Insertamos la SDCard en la Raspberry Pi y Arrancamos.
+* Averiguamos La ip asiganda a la Rasberry con el comando *nmap* y necesito como dato la subred.
 
-La imagen se llama [ubuntu-20.04-preinstalled-server-arm64+raspi.img.xz](https://ubuntu.com/download/raspberry-pi/thank-you?version=20.04&architecture=arm64+raspi)
-
-
-
-El sistema operativo lo podemos instalar con el software **raspberry Pi Imager**
-
- * Elegimos SD Card
- * Elegimos Fichero imagen que nos hemos descargado previamente
- * Escribimos la imagen
-
- Una vez terminado la insertamos en la Raspberry Pi y Arrancamos.
-
-Para acceder a ella averiguamos la ip
-
-```
+``` bash
+➜  ~ nmap -sn 192.168.1.0/24
 Starting Nmap 7.80 ( https://nmap.org ) at 2020-07-11 08:00 CEST
 Nmap scan report for 192.168.1.1
 Host is up (0.0055s latency).
@@ -36,13 +30,25 @@ Nmap scan report for 192.168.1.2
 Host is up (0.011s latency).
 Nmap scan report for 192.168.1.35
 Host is up (0.0060s latency).
-Nmap scan report for 192.168.1.44
+Nmap scan report for 192.168.1.61
 Host is up (0.00038s latency).
 Nmap done: 256 IP addresses (6 hosts up) scanned in 7.89 seconds
 ```
-Y comprobamos que conectamos correctamente usuario/password por defecto son **(ubuntu/ubuntu)**
+
+* Comprobamos que conectamos correctamente usuario/password por defecto son **(ubuntu/ubuntu)**
+* La primera vez que conectemos, nos pedirá que cambiemos la password.
+
+```
+➜  ~ ssh ubuntu@192.168.1.61
+ubuntu@192.168.1.61's password:
+Welcome to Ubuntu 20.04 LTS (GNU/Linux 5.4.0-1008-raspi aarch64)
+..
+
+ubuntu@ubuntu:~$
+```
 
 
+### Prepareación previa de las servidores.
 
 ## Preparación previa de las servidores.
 
@@ -87,9 +93,7 @@ network:
     version: 2
 
 ```
-
-
-### Asignación nombre de máquinas
+### Asignación nombre de máquinas
 
 
 Para la asignación de nombres de máquinas modificamos
