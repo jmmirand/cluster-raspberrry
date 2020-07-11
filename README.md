@@ -1,7 +1,7 @@
 # cluster-raspberrry
 
-
 # Objetivo
+
 
 Documenter todos los pasos realizados para montar un cluster con 4 raspberry Pi.
 
