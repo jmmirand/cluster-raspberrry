@@ -14,13 +14,12 @@ Usaremos para hacerlo el sistema operativo Ubuntu Server de 64 bits.
 
 Para el laborario usamos [ubuntu-20.04-preinstalled-server-arm64+raspi.img.xz](https://ubuntu.com/download/raspberry-pi/thank-you?version=20.04&architecture=arm64+raspi) como S.O.
 
-Una vez descargado lo instalo con **raspberry Pi Imager**.
+Para la instalación del S.O.:
 
-Es muy sencillo, inserto la SDCard , eligo la imagen y la escribo.
-
-Insertamos la SDCard en la Raspberry Pi y Arrancamos.
-
-La ip asiganda para acceder a ella lo hacemos con el comando nmap
+* Descargamos e instalamos **raspberry Pi Imager**.
+* Isertamos SDCard , eligo la imagen y escribimos.
+* Insertamos la SDCard en la Raspberry Pi y Arrancamos.
+* Averiguamos La ip asiganda a la Rasberry con el comando *nmap*
 
 ``` bash
 ➜  ~ nmap -sn 192.168.1.0/24
@@ -46,7 +45,6 @@ Welcome to Ubuntu 20.04 LTS (GNU/Linux 5.4.0-1008-raspi aarch64)
 
 ubuntu@ubuntu:~$
 ```
-
 
 
 ### Prepareación previa de las servidores.
