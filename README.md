@@ -1,16 +1,16 @@
 # cluster-raspberrry
 
-# Objetivo
 
+Queremos montar un cluster kubernetes con varias Raspberry Pi 4 Modelo B. 
 
-Documenter todos los pasos realizados para montar un cluster con 4 raspberry Pi.
+Además aprovecharemos para automatizarlo con Ansible lo más posible para poder recrear el cluster tantas veces que sea necesario.
 
-Una vez montado el hardware instalaremos ubuntu server 64bit.
+Nuestro cluster kubernetes estará compuestos por 4 Raspberry PI.
+ * 1 master
+ * 3 workers
+Usaremos para hacerlo el sistema operativo Ubuntu Server de 64 bits.
 
-En los servidores instalaremos un cluster kubernetes con 1 master y 3 workers.
-
-
-# Instalación y preparación del Sistema Operativo
+# Instalación y preparación del Sistema Operativo
 
 Descargamos la imagen del Sistema Operativo. En este laborario usamos Ubuntu Server 64bits
 
@@ -82,8 +82,8 @@ network:
 
 ```
 
-
 ### Asignación nombre de máquinas
+
 
 
 Para la asignación de nombres de máquinas modificamos
