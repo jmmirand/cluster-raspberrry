@@ -1,4 +1,4 @@
-- hosts: all
+- hosts: "{{ launchHosts | default('all') }}"
   tasks:
     - name: "asignar nombre maquina"
       hostname:
