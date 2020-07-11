@@ -36,6 +36,7 @@ Nmap done: 256 IP addresses (6 hosts up) scanned in 7.89 seconds
 ```
 
 * Comprobamos que conectamos correctamente usuario/password por defecto son **(ubuntu/ubuntu)**
+* La primera vez que conectemos, nos pedirá que cambiemos la password.
 
 ```
 ➜  ~ ssh ubuntu@192.168.1.61
