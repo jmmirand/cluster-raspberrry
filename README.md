@@ -31,11 +31,22 @@ Nmap scan report for 192.168.1.2
 Host is up (0.011s latency).
 Nmap scan report for 192.168.1.35
 Host is up (0.0060s latency).
-Nmap scan report for 192.168.1.44
+Nmap scan report for 192.168.1.61
 Host is up (0.00038s latency).
 Nmap done: 256 IP addresses (6 hosts up) scanned in 7.89 seconds
 ```
+
 Y comprobamos que conectamos correctamente usuario/password por defecto son **(ubuntu/ubuntu)**
+
+```
+➜  ~ ssh ubuntu@192.168.1.61
+ubuntu@192.168.1.61's password:
+Welcome to Ubuntu 20.04 LTS (GNU/Linux 5.4.0-1008-raspi aarch64)
+..
+
+ubuntu@ubuntu:~$
+```
+
 
 
 ### Prepareación previa de las servidores.
