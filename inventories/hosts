@@ -1,0 +1,6 @@
+[master-not-prepared]
+192.168.1.61 hostname=master new_ip=191.168.1.10
+
+[workers-not-prepared]
+192.168.1.62 hostname=worker01 new_ip=191.168.1.11
+192.168.1.63 hostname=worker02 new_ip=191.168.1.12

@@ -1,0 +1,22 @@
+- hosts: all
+  tasks:
+    - name: "asignar nombre maquina"
+      hostname:
+        name: "{{ hostname }}"
+      become: yes
+
+    - name: "Actualizar clave publica"
+      authorized_key:
+        user: 'ubuntu'
+        key: '{{ declare_keys }}'
+        state: present
+
+    - name: Template a file to /etc/netplan/50-cloud-init.yaml
+      template:
+        src: 50-cloud-init.yaml
+        dest: /etc/netplan/50-cloud-init.yaml
+      become: yes
+
+    - name: reboot incondicional
+      reboot:
+      become: yes
