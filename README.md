@@ -17,9 +17,9 @@ Para el laborario usamos [ubuntu-20.04-preinstalled-server-arm64+raspi.img.xz](h
 Para la instalación del S.O.:
 
 * Descargamos e instalamos **raspberry Pi Imager**.
-* Isertamos SDCard , eligo la imagen y escribimos.
+* Isertamos SDCard , eligimos la imagen y escribimos.
 * Insertamos la SDCard en la Raspberry Pi y Arrancamos.
-* Averiguamos La ip asiganda a la Rasberry con el comando *nmap*
+* Averiguamos La ip asiganda a la Rasberry con el comando *nmap* y necesito como dato la subred.
 
 ``` bash
 ➜  ~ nmap -sn 192.168.1.0/24
@@ -35,7 +35,7 @@ Host is up (0.00038s latency).
 Nmap done: 256 IP addresses (6 hosts up) scanned in 7.89 seconds
 ```
 
-Y comprobamos que conectamos correctamente usuario/password por defecto son **(ubuntu/ubuntu)**
+* Comprobamos que conectamos correctamente usuario/password por defecto son **(ubuntu/ubuntu)**
 
 ```
 ➜  ~ ssh ubuntu@192.168.1.61
