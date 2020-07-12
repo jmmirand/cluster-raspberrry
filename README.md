@@ -1,5 +1,6 @@
 # cluster-raspberrry
 
+Ref [Laboratorio Cluster Kubernete Jeff-Geerling](https://www.youtube.com/watch?v=kgVz4-SEhbE&list=PL2_OBreMn7Frk57NLmLheAaSSpJLLL90G)
 
 Queremos montar un cluster kubernetes con varias Raspberry Pi 4 Modelo B.
 
@@ -222,3 +223,17 @@ master     Ready    master   33m   v1.17.5+k3s1
 ``` bash
 ➜  k3s-ansible git:(master) ansible all -i inventory/my-cluster  -a "shutdown now"  -b -u ubuntu
 ```
+
+
+
+# Instalación Aplicaciones
+
+
+## Cluster-monitoring
+
+
+ * Intentamos con  [kube-prometheus](https://github.com/coreos/kube-prometheus) pero da error en Rasberry
+
+ * Instalamos la monitorización con el proyecto [cluster-monitoring](https://github.com/carlosedp/cluster-monitoring)
+   - Seguimos las instrucciones  del QuicStart
+ * 
