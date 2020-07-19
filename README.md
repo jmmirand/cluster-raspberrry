@@ -169,6 +169,7 @@ En el hosts añadimos los servidores recion instalados.
 [node]
 192.168.1.[11:13]
 
+
 [k3s_cluster:children]
 master
 node
@@ -236,4 +237,4 @@ master     Ready    master   33m   v1.17.5+k3s1
 
  * Instalamos la monitorización con el proyecto [cluster-monitoring](https://github.com/carlosedp/cluster-monitoring)
    - Seguimos las instrucciones  del QuicStart
- * 
+ 
