@@ -1,0 +1,5 @@
+- hosts: "{{ launchHosts | default('all') }}"
+  tasks:
+    - name: install gulster-fs
+      include_role:
+        name: gluster-fs
