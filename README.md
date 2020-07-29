@@ -232,7 +232,7 @@ master     Ready    master   33m   v1.17.5+k3s1
 # Instalación Aplicaciones
 
 
-## Cluster-monitoring
+## Cluster-monitoring
 
 
  * Intentamos con  [kube-prometheus](https://github.com/coreos/kube-prometheus) pero da error en Rasberry
@@ -241,7 +241,7 @@ master     Ready    master   33m   v1.17.5+k3s1
    - Seguimos las instrucciones  del QuicStart
 
 
-## Instalación de glusterFS
+## Instalación de glusterFS
 
 Instalación de GlusterFS
 
