@@ -245,7 +245,32 @@ master     Ready    master   33m   v1.17.5+k3s1
 
  * Para la instalación del cluster dejamos preparado un disco que lo dejaremos dedicado a glusterFs.
 
+* Ansible que automatiza [gluster-fs-on-arm](https://www.gopeedesignstudio.com/2018/07/13/glusterfs-on-arm/)
 
+
+``` bash
+ ansible-playbook playbooks/install-gluster-fs.yml  -i inventories -u ubuntu --vault-password-file .vault -e launchHost=raspberrycluster
+```
+
+* Si queremos probar que el glusterFs está bien montado
+
+```
+ubuntu@master:/tmp$ sudo gluster peer status
+Number of Peers: 3
+
+Hostname: worker01
+Uuid: 4825283e-ff70-475b-9b1f-3f9d1bbbb1d0
+State: Peer in Cluster (Connected)
+
+Hostname: worker02
+Uuid: 3ea01319-d89f-4f0f-ab0d-3e00b1b7620c
+State: Peer in Cluster (Connected)
+
+Hostname: worker03
+Uuid: 3a8f3d8b-f678-4176-9c1b-c6f480d05800
+State: Peer in Cluster (Connected)
+
+```
 
 
 
