@@ -243,7 +243,15 @@ master     Ready    master   33m   v1.17.5+k3s1
 
 ## Instalación de glusterFS
 
+ * Para la instalación del cluster dejamos preparado un disco que lo dejaremos dedicado a glusterFs.
+
+
+
+
+
 Instalación de GlusterFS
+
+https://www.gopeedesignstudio.com/2018/07/13/glusterfs-on-arm/
 
 Aplicaremos este articulo:
 https://piensoluegoinstalo.com/despliegue-de-aplicaciones-con-helm-heketi-cli-glusterfs/
@@ -286,6 +294,9 @@ https://docs.okd.io/3.7/install_config/storage_examples/containerized_heketi_wit
 
 
 
+https://mattcurfman.com/index.php/2019/03/25/k38s-on-a-4-node-up-board-cluster/
+https://computingforgeeks.com/configure-kubernetes-dynamic-volume-provisioning-with-heketi-glusterfs/
+https://www.jorgedelacruz.es/2018/08/23/kubernetes-helm-heketi-con-glusterfs/
 
 
 

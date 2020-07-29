@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 {% for server in groups['raspberrycluster']%}
-    CLUSTER_SERVER=" $CLUSTER_SERVER {{server}}:/data/glusterfs/myvol1/brick1/brick"
+    CLUSTER_SERVER=" $CLUSTER_SERVER {{ hostvars[server]['hostname']}}:/data/glusterfs/myvol1/brick1/brick"
 {% endfor %}
 
 

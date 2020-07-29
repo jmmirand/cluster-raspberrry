@@ -59,10 +59,8 @@
 
 - name: probing peers
   become: yes
-  debug:
-    msg: "sudo gluster peer probe {{item}} "
-#  shell: "sudo gluster peer probe {{item}} "
-#  when: hostvars[inventory_hostname]['ansible_env'].SSH_CONNECTION.split(' ')[2] == groups['raspberrycluster'][0]
+  shell: "sudo gluster peer probe {{ hostvars[item]['hostname']}}"
+  when: hostvars[inventory_hostname]['ansible_env'].SSH_CONNECTION.split(' ')[2] == groups['raspberrycluster'][0]
   with_items: "{{groups['raspberrycluster']}}"
 
 
@@ -73,8 +71,8 @@
   when: hostvars[inventory_hostname]['ansible_env'].SSH_CONNECTION.split(' ')[2] == groups['raspberrycluster'][0]
   become: yes
 
-#- name: Creamos Brick
-#  shell: bash /tmp/create_volume_gluster.sh
-#  when: hostvars[inventory_hostname]['ansible_env'].SSH_CONNECTION.split(' ')[2] == groups['raspberrycluster'][0]
-#  become: yes
-#  ignore_errors: yes
+- name: Creamos Brick
+  shell: bash /tmp/create_volume_gluster.sh
+  when: hostvars[inventory_hostname]['ansible_env'].SSH_CONNECTION.split(' ')[2] == groups['raspberrycluster'][0]
+  become: yes
+  ignore_errors: yes

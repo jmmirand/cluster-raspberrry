@@ -1,4 +1,4 @@
-- hosts: "{{ launchHosts | default('all') }}"
+- hosts: "{{ launchHosts | default('raspberrycluster:children') }}"
   tasks:
     - name: install gulster-fs
       include_role:
