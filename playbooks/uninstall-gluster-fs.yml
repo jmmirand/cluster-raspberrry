@@ -1,0 +1,5 @@
+- hosts: "{{ launchHosts | default('all') }}"
+  tasks:
+    - name: Uninstall gulster-fs
+      include_role:
+        name: gluster-fs-uninstall
