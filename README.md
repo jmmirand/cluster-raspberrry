@@ -53,7 +53,7 @@ ubuntu@ubuntu:~$
 
 ### Prepareación previa de las servidores.
 
-## Preparación previa de las servidores.
+## Preparación previa de las servidores.
 
 Para facilitar la instalación hay que asignar IPs fijas a las máquinas y poner nombre a las máquinas.
 
