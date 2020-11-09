@@ -195,6 +195,12 @@ Ejecutamos el playbooks
 ``` bash
 ➜  k3s-ansible git:(master) ansible-playbook site.yml -i inventory/my-cluster -u ubuntu
 ```
+ * Copiamos el fichero de configuración para kubectl
+
+```bash
+scp ubuntu@192.168.1.10:~/.kube/config ~/.kube/config-pi
+export KUBECONFIG=~/.kube/config-pi
+```
 
 ## Comprobación cluster
 

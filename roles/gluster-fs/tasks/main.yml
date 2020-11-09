@@ -47,8 +47,6 @@
   shell: "sudo mount /data/glusterfs/myvol1/brick1"
   become: yes
 
-
-
 - name: Make sure glusterd.service is started
   systemd:
     state: started
