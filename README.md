@@ -64,10 +64,10 @@ Lo primero que tenemos que hacer es revisar en el rooter cual es el rango de IPs
 
 En mi caso el rango es [192.168.1.33 - 192.168.1.199] , con lo cual las que escoja para asignar fija debemos coger fuera de este rango.
 
-Master : 192.168.1.10
-Worker-01: 192.168.1.11
-Worker-02: 192.168.1.12
-Worker-03: 192.168.1.13
+ * **Master** : 192.168.1.10
+ * **Worker-01** : 192.168.1.11
+ * **Worker-02** : 192.168.1.12
+ * **Worker-03** : 192.168.1.13
 
 Como el sistema operativo que estamos usando es **Ubuntu-Server 20.04LTS**  la asignación de la ip fija es modificando el fichero.
 
