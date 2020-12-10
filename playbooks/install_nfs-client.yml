@@ -1,0 +1,21 @@
+- hosts: "workers"
+  tasks:
+
+  - name: Crear directorio /mnt/nfs
+    file:
+      path: /mnt/nfs
+      owner: root
+      group: root
+      mode: '1777'
+      state: directory
+    become: yes
+
+  - import_role:
+      name: ansible-role-nfs
+    vars:
+      nfs_mode: client
+      nfs_client_imports:
+        - local: "/mnt/nfs"
+          remote: "/mnt/nfs"
+          server_host: "master"
+    become: yes

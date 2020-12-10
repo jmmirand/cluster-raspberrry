@@ -1,0 +1,12 @@
+- hosts: workers
+
+  vars:
+    pip_package: python3-pip
+
+  tasks:
+    - import_role:
+        name : geerlingguy.pip
+      become: yes
+    - import_role:
+        name : geerlingguy.docker_arm
+      become: yes

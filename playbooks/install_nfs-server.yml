@@ -1,0 +1,20 @@
+- hosts: "master"
+  tasks:
+
+  - name: Crear directorio /mnt/nfs
+    file:
+      path: /mnt/nfs
+      owner: root
+      group: root
+      mode: '1777'
+      state: directory
+    become: yes
+
+  - import_role:
+      name: ansible-role-nfs
+    vars:
+      nfs_mode: server
+      nfs_exports:
+        - path: "/mnt/nfs"
+          export: "*(rw,all_squash,insecure,async,no_subtree_check,anonuid=1000,anongid=1000)"
+    become: yes

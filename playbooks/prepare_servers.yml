@@ -1,36 +1,4 @@
-- hosts: "{{ launchHosts | default('all') }}"
+- hosts: "raspberrycluster-not-prepared"
   tasks:
-    - name: "asignar nombre maquina"
-      hostname:
-        name: "{{ hostname }}"
-      become: yes
-
-    - name: "Actualizar clave publica"
-      authorized_key:
-        user: 'ubuntu'
-        key: '{{ declare_keys }}'
-        state: present
-
-    - name: Template a file to /etc/netplan/50-cloud-init.yaml
-      template:
-        src: 50-cloud-init.yaml
-        dest: /etc/netplan/50-cloud-init.yaml
-      become: yes
-
-    - debug:
-        msg: "Mensaje: {{ hostvars[item]['hostname'] }}"
-      with_items: "{{groups['raspberrycluster']}}"
-
-    - name: Update the /etc/hosts file with node name
-      become: yes
-      lineinfile:
-        path: "/etc/hosts"
-        regexp: ".*\t{{ hostvars[item]['hostname']}}\t{{ hostvars[item]['hostname']}}"
-        line: "{{ hostvars[item]['inventory_hostname'] }}\t{{ hostvars[item]['hostname']}}\t{{ hostvars[item]['hostname']}}"
-        state: present
-        backup: yes
-      with_items: "{{groups['raspberrycluster']}}"
-
-    - name: reboot incondicional
-      reboot:
-      become: yes
+    - include_role:
+        name: prepare_servers
